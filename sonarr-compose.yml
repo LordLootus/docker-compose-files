@@ -1,0 +1,16 @@
+---
+services:
+  sonarr:
+    image: lscr.io/linuxserver/sonarr:latest
+    container_name: sonarr
+    environment:
+      - PUID=1000
+      - PGID=110
+      - TZ=Europe/London
+    volumes:
+      - /mnt/sonarr:/config
+      - /mnt/plex/tvshows:/tv #optional
+      - /mnt/download:/downloads #optional
+    ports:
+      - 8989:8989
+    restart: unless-stopped
