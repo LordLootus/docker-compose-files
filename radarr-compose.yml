@@ -10,7 +10,7 @@ services:
     volumes:
       - /mnt/radarr:/config
       - /mnt/plex/movies:/movies #optional
-      - /mnt/download:/downloads #optional
+      - /mnt/download/complete:/downloads #optional
     ports:
       - 7878:7878
     restart: unless-stopped
